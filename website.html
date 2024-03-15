@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Booster</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light grey background */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 800px; /* Limit container width for better readability */
+        }
+        .task-input {
+            margin-bottom: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">Productivity Booster</h1>
+
+    <!-- Task Management Section -->
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Task Management
+        </div>
+        <div class="card-body">
+            <form id="taskForm">
+                <div class="form-group">
+                    <input type="text" class="form-control task-input" placeholder="Add a new task...">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+            </form>
+            <ul class="list-group mt-3" id="taskList">
+                <!-- Tasks will be added dynamically here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Goal Tracking Section -->
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            Goal Tracking
+        </div>
+        <div class="card-body">
+            <p class="card-text">No goals set yet. Start setting your goals to track your progress!</p>
+        </div>
+    </div>
+
+    <!-- Time Management Section -->
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            Time Management
+        </div>
+        <div class="card-body">
+            <p class="card-text">No time management features available yet. Stay tuned for updates!</p>
+        </div>
+    </div>
+
+    <!-- Profile Information Section -->
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            Profile Information
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Mariyam Lateef</h5>
+            <p class="card-text">Email: 20006105009@skt.umt.edu.pk</p>
+            <p class="card-text">Location: Sialkot</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            About
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Productivity Booster</h5>
+            <p class="card-text">Productivity Booster is a web application designed to help individuals manage their tasks, track their goals, and optimize their time effectively.</p>
+            <p class="card-text">With features such as task management, goal tracking, and time management, Productivity Booster aims to enhance productivity and efficiency in daily activities.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    // Task Management
+    document.getElementById('taskForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const taskInput = document.querySelector('.task-input');
+        const taskList = document.getElementById('taskList');
+        const newTask = taskInput.value;
+        if (newTask.trim() !== '') {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            li.appendChild(document.createTextNode(newTask));
+            taskList.appendChild(li);
+            taskInput.value = '';
+        }
+    });
+</script>
+
+</body>
+</html>
